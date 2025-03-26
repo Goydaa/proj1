@@ -16,17 +16,17 @@ double Customer::getBalance() const {
 void Customer::purchase(Store& store, const std::string& productName, int quantity) {
     double price = store.findPrice(productName);
     if (price == -1) {
-        std::cout << "Òîâàð íå íàéäåí!" << std::endl;
+        std::cout << "Ð¢Ð¾Ð²Ð°Ñ€ Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½!" << std::endl;
         return;
     }
 
     double totalCost = price * quantity;
     if (balance >= totalCost && store.purchaseProduct(productName, quantity)) {
         balance -= totalCost;
-        std::cout << name << " êóïèë " << quantity << " øò. " << productName << " çà " << totalCost << " ðóá.\n";
+        std::cout << name << " ÐºÑƒÐ¿Ð¸Ð» " << quantity << " ÑˆÑ‚. " << productName << " Ð·Ð° " << totalCost << " Ñ€ÑƒÐ±.\n ";
     }
     else {
-        std::cout << "Íåäîñòàòî÷íî ñðåäñòâ èëè òîâàðà â íàëè÷èè!" << std::endl;
+        std::cout << " ÐÐµÐ´Ð¾ÑÑ‚Ð°Ñ‚Ð¾Ñ‡Ð½Ð¾ ÑÑ€ÐµÐ´ÑÑ‚Ð² Ð¸Ð»Ð¸ Ñ‚Ð¾Ð²Ð°Ñ€ Ð² Ð½ÐµÐ´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ð¾Ð¼ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ðµ " << std::endl;
     }
 }
 

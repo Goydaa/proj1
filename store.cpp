@@ -26,6 +26,6 @@ double Store::findPrice(const std::string& productName) const {
             return product.getPrice();
         }
     }
-    return -1; // Если товар не найден
+    return -1; 
 }
 

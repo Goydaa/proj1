@@ -1,9 +1,9 @@
 #ifndef STORE_H
 #define STORE_H
 
-#include "Product.h"
 #include <vector>
 #include <string>
+#include "Product.h"
 
 class Store {
 private:
@@ -11,13 +11,9 @@ private:
     std::vector<Product> products;
 
 public:
-    Store(const std::string& name);
-
-    std::string getName() const;
+    Store(const std::string& storeName);
     void addProduct(const Product& product);
-    bool purchaseProduct(const std::string& productName, int quantity);
-    double findPrice(const std::string& productName) const;
+    Product* findProduct(const std::string& productName);
 };
 
-#endif // STORE_H
-
+#endif

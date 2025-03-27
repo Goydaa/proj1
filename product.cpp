@@ -1,8 +1,7 @@
 #include "Product.h"
 
-Product::Product(const std::string& name, double price, int quantity)
-    : name(name), price(price), quantity(quantity) {
-}
+Product::Product(const std::string& productName, double productPrice, int productQuantity, double productMinPrice)
+    : name(productName), price(productPrice), quantity(productQuantity), minPrice(productMinPrice) {}
 
 std::string Product::getName() const {
     return name;
@@ -16,11 +15,15 @@ int Product::getQuantity() const {
     return quantity;
 }
 
-void Product::setPrice(double newPrice) {
-    price = newPrice;
+double Product::getMinPrice() const {
+    return minPrice;
 }
 
-void Product::setQuantity(int newQuantity) {
-    quantity = newQuantity;
+bool Product::isAffordable(double money) const {
+    return money >= minPrice && money >= price;
+}
+
+void Product::reduceQuantity(int amount) {
+    quantity -= amount;
 }
 
